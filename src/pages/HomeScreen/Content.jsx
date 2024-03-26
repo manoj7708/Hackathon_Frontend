@@ -1,10 +1,13 @@
+import "../../assets/Style/HomeScreen/home.css";
+import { Link } from "react-router-dom";
+
 export default function Content() {
   return (
-    <>
+    <div className="home-content">
       <HeroSectionComponent />
       <CarouselComponent />
       <TrustedComponent />
-    </>
+    </div>
   );
 }
 
@@ -39,9 +42,9 @@ function HeroSectionComponent() {
         </div>
         <div className="col-lg-6">
           <img
-            src="bootstrap-themes.png"
+            src="src\assets\Images\HomeScreen\background image.avif"
             className="d-block mx-lg-auto img-fluid"
-            alt="Bootstrap Themes"
+            alt="Hero Image"
             width="700"
             height="500"
             loading="lazy"
@@ -56,7 +59,7 @@ function CarouselComponent() {
   return (
     <div
       id="carouselExampleAutoplaying"
-      className="carousel slide"
+      className="carousel slide position-relative"
       data-bs-ride="carousel"
     >
       <div className="carousel-inner">
@@ -67,6 +70,23 @@ function CarouselComponent() {
             style={{ maxHeight: "100vh", maxWidth: "100%", objectFit: "cover" }}
             alt="..."
           />
+          <div className="carousel-caption text-dark position-absolute top-50 start-50 translate-middle text-center">
+            <h1>First Slide Label</h1>
+            <p style={{ maxWidth: "100%", margin: "0 auto" }}>
+              Lorem ipsum, dolor sit amet consectetur adipisicing elit. Placeat
+              explicabo quaerat blanditiis similique at ad, corporis nulla
+              fugiat officia aut aperiam facere commodi esse, nesciunt
+              consequuntur voluptas minus? Magnam, inventore. Nobis rem
+              excepturi dolorum impedit error, est maxime omnis at sit facilis
+              eveniet? Animi labore ullam placeat necessitatibus dolores, vitae
+              veniam beatae, nobis alias earum explicabo, mollitia voluptatibus!
+              Voluptate, minima. Sequi, asperiores dolor iste sint recusandae
+              quasi consequuntur inventore eveniet? Sequi, qui voluptatem nobis
+              tempora iste saepe exercitationem voluptates sed iusto, veniam
+              consequatur dolores provident necessitatibus facilis atque
+              laudantium earum.
+            </p>
+          </div>
         </div>
         <div className="carousel-item">
           <img
@@ -75,6 +95,23 @@ function CarouselComponent() {
             style={{ maxHeight: "100vh", maxWidth: "100%", objectFit: "cover" }}
             alt="..."
           />
+          <div className="carousel-caption text-dark position-absolute top-50 start-50 translate-middle text-center">
+            <h1>Second Slide Label</h1>
+            <p style={{ maxWidth: "100%", margin: "0 auto" }}>
+              Lorem ipsum, dolor sit amet consectetur adipisicing elit. Placeat
+              explicabo quaerat blanditiis similique at ad, corporis nulla
+              fugiat officia aut aperiam facere commodi esse, nesciunt
+              consequuntur voluptas minus? Magnam, inventore. Nobis rem
+              excepturi dolorum impedit error, est maxime omnis at sit facilis
+              eveniet? Animi labore ullam placeat necessitatibus dolores, vitae
+              veniam beatae, nobis alias earum explicabo, mollitia voluptatibus!
+              Voluptate, minima. Sequi, asperiores dolor iste sint recusandae
+              quasi consequuntur inventore eveniet? Sequi, qui voluptatem nobis
+              tempora iste saepe exercitationem voluptates sed iusto, veniam
+              consequatur dolores provident necessitatibus facilis atque
+              laudantium earum.
+            </p>
+          </div>
         </div>
         <div className="carousel-item">
           <img
@@ -83,6 +120,23 @@ function CarouselComponent() {
             style={{ maxHeight: "100vh", maxWidth: "100%", objectFit: "cover" }}
             alt="..."
           />
+          <div className="carousel-caption text-dark position-absolute top-50 start-50 translate-middle text-center">
+            <h1>Third Slide Label</h1>
+            <p style={{ minWidth: "100%", margin: "0 auto" }}>
+              Lorem ipsum, dolor sit amet consectetur adipisicing elit. Placeat
+              explicabo quaerat blanditiis similique at ad, corporis nulla
+              fugiat officia aut aperiam facere commodi esse, nesciunt
+              consequuntur voluptas minus? Magnam, inventore. Nobis rem
+              excepturi dolorum impedit error, est maxime omnis at sit facilis
+              eveniet? Animi labore ullam placeat necessitatibus dolores, vitae
+              veniam beatae, nobis alias earum explicabo, mollitia voluptatibus!
+              Voluptate, minima. Sequi, asperiores dolor iste sint recusandae
+              quasi consequuntur inventore eveniet? Sequi, qui voluptatem nobis
+              tempora iste saepe exercitationem voluptates sed iusto, veniam
+              consequatur dolores provident necessitatibus facilis atque
+              laudantium earum.
+            </p>
+          </div>
         </div>
       </div>
       <button
@@ -108,11 +162,18 @@ function CarouselComponent() {
 }
 
 function TrustedComponent() {
+  const scrollToTop = () => {
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth' 
+    });
+  };
+
   return (
-    <div className="trusted-section bg-light py-5 mb-2">
+    <div className="trusted-section bg-light py-5 ">
       <div className="container">
         <div className="row">
-          <div className="col-md-6">
+          <div className="col">
             <h2 className="mb-4">
               We are trusted by customers all over the world
             </h2>
@@ -126,9 +187,11 @@ function TrustedComponent() {
               efficitur euismod, leo nisl consectetur nulla, et euismod enim
               elit vitae nunc.
             </p>
-          </div>
-          <div className="col-md-6">
-            {/* You can add an image here if needed */}
+            <div className="trusted-button">
+              <Link to="/customer" className="btn btn-primary mx-4" onClick={scrollToTop}>
+                Primary
+              </Link>
+            </div>
           </div>
         </div>
       </div>

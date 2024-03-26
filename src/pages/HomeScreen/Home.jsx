@@ -3,12 +3,11 @@ import Content from "./Content";
 
 function Home() {
   return (
-    <>
+    <div>
       <Header />
       <Content />
-
       <Footer />
-    </>
+    </div>
   );
 }
 

@@ -1,135 +1,220 @@
-import "../Style/Layout/header.css";
+import React from "react";
+import "../Style/Layout/navbar.css";
+import { NavLink, useNavigate } from "react-router-dom";
 
-const Header = () => {
+const Header = ({ loggedIn }) => {
+  const navigate = useNavigate();
+
   return (
-    <div className="container-fluid bg-dark text-light">
-      <header className="d-flex flex-wrap align-items-center justify-content-center justify-content-md-between py-3 mb-4  border-bottom">
-        <div className="col-md-3 mb-2 mb-md-0">
-          <a
-            href="/"
-            className="d-inline-flex link-body-emphasis text-decoration-none text-light"
-          >
-            Your Company Name
-          </a>
-        </div>
-
-        <ul className="nav col-12 col-md-auto mb-2 justify-content-center mb-md-0">
-          <li>
-            <a href="#" className="nav-link px-2 link-secondary">
-              Home
-            </a>
-          </li>
-          <li>
-            <a href="#" className="nav-link px-2">
-              Features
-            </a>
-          </li>
-          <li className="nav-item dropdown">
-            <a
-              className="nav-link dropdown-toggle px-2"
-              href="#"
-              id="navbarDropdown"
-              role="button"
-              data-bs-toggle="dropdown"
-              aria-expanded="false"
+    <div>
+      <div className="container-fluid text-light top-header">
+        <header className="d-flex flex-wrap align-items-center justify-content-between py-3 mx-4">
+          <div className="col-md-3 mb-2 mb-md-0 first-part">
+            <button
+              onClick={() => {
+                navigate("/");
+              }}
+              className="d-inline-flex link-body-emphasis text-decoration-none text-light btn"
             >
-              Services
-            </a>
-            <ul
-              className="dropdown-menu dropdown-width text-center"
-              aria-labelledby="navbarDropdown"
-            >
-              <div className="row">
-                <div className="col border-end">
-                  <li>
-                    <a className="dropdown-item" href="#">
-                      Service 1
-                    </a>
-                  </li>
-                  <li>
-                    <a className="dropdown-item" href="#">
-                      Service 2
-                    </a>
-                  </li>
-                  <li>
-                    <a className="dropdown-item" href="#">
-                      Service 3
-                    </a>
-                  </li>
-                  <li>
-                    <a className="dropdown-item" href="#">
-                      Service 4
-                    </a>
-                  </li>
-                  <li>
-                    <a className="dropdown-item" href="#">
-                      Service 5
-                    </a>
-                  </li>
-                </div>
-                <div className="col">
-                  <li>
-                    <a className="dropdown-item" href="#">
-                      Service 6
-                    </a>
-                  </li>
-                  <li>
-                    <a className="dropdown-item" href="#">
-                      Service 7
-                    </a>
-                  </li>
-                  <li>
-                    <a className="dropdown-item" href="#">
-                      Service 8
-                    </a>
-                  </li>
-                  <li>
-                    <a className="dropdown-item" href="#">
-                      Service 9
-                    </a>
-                  </li>
-                  <li>
-                    <a className="dropdown-item" href="#">
-                      Service 10
-                    </a>
-                  </li>
-                </div>
-              </div>
+              Your Company Name
+            </button>
+          </div>
+          <div className="col-md-6 second-part">
+            <ul className="nav justify-content-center">
+              <li className="nav-item">
+                <NavLink
+                  to="/"
+                  exact
+                  activeClassName="active"
+                  className="nav-link px-2  btn"
+                >
+                  Home
+                </NavLink>
+              </li>
+              <li className="nav-item">
+                <NavLink
+                  to="/products"
+                  activeClassName="active"
+                  className="nav-link px-2 btn"
+                >
+                  Products
+                </NavLink>
+              </li>
+              <li className="nav-item dropdown">
+                <NavLink
+                  to="/services"
+                  activeClassName="active"
+                  className="nav-link dropdown-toggle px-2 btn"
+                >
+                  Services
+                </NavLink>
+                <ul className="dropdown-menu text-center dropdown-menu-end">
+                  <div className="row">
+                    <div className="col">
+                      <li>
+                        <NavLink to="/service1" className="dropdown-item btn">
+                          Service 1
+                        </NavLink>
+                      </li>
+                      <li>
+                        <NavLink to="/service2" className="dropdown-item btn">
+                          Service 2
+                        </NavLink>
+                      </li>
+                      <li>
+                        <NavLink to="/service3" className="dropdown-item btn">
+                          Service 3
+                        </NavLink>
+                      </li>
+                      <li>
+                        <NavLink to="/service4" className="dropdown-item btn">
+                          Service 4
+                        </NavLink>
+                      </li>
+                      <li>
+                        <NavLink to="/service5" className="dropdown-item btn">
+                          Service 5
+                        </NavLink>
+                      </li>
+                    </div>
+                    <div className="col">
+                      <li>
+                        <NavLink to="/service6" className="dropdown-item btn">
+                          Service 6
+                        </NavLink>
+                      </li>
+                      <li>
+                        <NavLink to="/service7" className="dropdown-item btn">
+                          Service 7
+                        </NavLink>
+                      </li>
+                      <li>
+                        <NavLink to="/service8" className="dropdown-item btn">
+                          Service 8
+                        </NavLink>
+                      </li>
+                      <li>
+                        <NavLink to="/service9" className="dropdown-item btn">
+                          Service 9
+                        </NavLink>
+                      </li>
+                      <li>
+                        <NavLink to="/service10" className="dropdown-item btn">
+                          Service 10
+                        </NavLink>
+                      </li>
+                    </div>
+                  </div>
+                </ul>
+              </li>
+              <li className="nav-item">
+                <NavLink
+                  to="/customer"
+                  activeClassName="active"
+                  className="nav-link px-2 btn"
+                >
+                  Customers
+                </NavLink>
+              </li>
+              <li className="nav-item">
+                <NavLink
+                  to="/features"
+                  activeClassName="active"
+                  className="nav-link px-2 btn"
+                >
+                  Features
+                </NavLink>
+              </li>
+              
             </ul>
-          </li>
-          <li>
-            <a href="#" className="nav-link px-2">
-              Customers
-            </a>
-          </li>
-          <li>
-            <a href="#" className="nav-link px-2">
-              Products
-            </a>
-          </li>
-          <li>
-            <a href="#" className="nav-link px-2">
-              Pricing
-            </a>
-          </li>
-        </ul>
-
-        <div className="col-md-3 text-end">
-          <button type="button" className="btn btn-outline-primary me-2">
-            Login
-          </button>
-          <button type="button" className="btn btn-primary">
-            Sign-up
-          </button>
-        </div>
-      </header>
+          </div>
+          <div className="col-md-3 text-end third-part">
+            <div className="d-flex align-items-center">
+              {loggedIn ? (
+                <>
+                  <form
+                    className="col-12 col-lg-auto mb-3 mb-lg-0 me-lg-3"
+                    role="search"
+                  >
+                    <input
+                      type="search"
+                      className="form-control"
+                      placeholder="Search..."
+                      aria-label="Search"
+                    />
+                  </form>
+                  <div className="dropdown text-end">
+                    <a
+                      href="#"
+                      className="d-block link-body-emphasis text-decoration-none dropdown-toggle"
+                      data-bs-toggle="dropdown"
+                      aria-expanded="false"
+                    >
+                      <img
+                        src="https://github.com/mdo.png"
+                        alt="mdo"
+                        width="32"
+                        height="32"
+                        className="rounded-circle"
+                      />
+                    </a>
+                    <ul className="dropdown-menu text-small">
+                      <li>
+                        <a className="dropdown-item" href="#">
+                          Profile
+                        </a>
+                      </li>
+                      <li>
+                        <a className="dropdown-item" href="#">
+                          Settings
+                        </a>
+                      </li>
+                      <li>
+                        <a className="dropdown-item" href="#">
+                          WhiteList
+                        </a>
+                      </li>
+                      <li>
+                        <hr className="dropdown-divider" />
+                      </li>
+                      <li>
+                        <a className="dropdown-item" href="#">
+                          Sign out
+                        </a>
+                      </li>
+                    </ul>
+                  </div>
+                </>
+              ) : (
+                <div>
+                  <button
+                    onClick={() => {
+                      navigate("/register", { state: { register: "login" } });
+                    }}
+                    className="btn btn-outline-primary me-2"
+                  >
+                    Login
+                  </button>
+                  <button
+                    onClick={() => {
+                      navigate("/register", { state: { register: "signup" } });
+                    }}
+                    className="btn btn-primary"
+                  >
+                    Sign-up
+                  </button>
+                </div>
+              )}
+            </div>
+          </div>
+        </header>
+      </div>
     </div>
   );
 };
-
 const Footer = () => {
   return (
-    <footer className="bg-dark text-light py-4">
+    <footer className=" text-light py-4 footer">
       <div className="container">
         <div className="row">
           <div className="col-md-4">
@@ -139,20 +224,28 @@ const Footer = () => {
               to delivering high-quality solutions to our customers.
             </p>
           </div>
-          <div className="col-md-4">
+          <div className="col-md-4 text-light">
             <h5>Quick Links</h5>
-            <ul className="list-unstyled">
+            <ul className="list-unstyled ">
               <li>
-                <a href="#">Home</a>
+                <a className="" href="#">
+                  Home
+                </a>
               </li>
               <li>
-                <a href="#">Products</a>
+                <a className="" href="#">
+                  Products
+                </a>
               </li>
               <li>
-                <a href="#">Services</a>
+                <a className="" href="#">
+                  Services
+                </a>
               </li>
               <li>
-                <a href="#">Contact Us</a>
+                <a className="" href="#">
+                  Contact Us
+                </a>
               </li>
             </ul>
           </div>
